@@ -1,1 +1,545 @@
-﻿
+﻿/********************* Общие классы ************************/
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    /* font-family: ; */
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+h2 {
+    font-size: 36px;
+    font-family: YesevaOne;
+}
+.img-responsive {
+    display: inline-block;
+    max-width: 100%;
+}
+/******************************** шапка  *********************************/
+header {
+    z-index: 1;
+    position: absolute;
+    height: 159px;
+    /* макс ширина 1600пх, исправить!! */
+    width: 100%;
+    margin: 0 auto;
+    /* background-color: ; */
+}
+.logo {
+    position: absolute;
+    left: 179px;
+    top: 8px;
+    width: 156px;
+    height: 92px;
+}
+/* .logo img {
+    width: 156px;
+    height: 92px;
+} */
+header nav {
+    position: absolute;
+    right: 215px;
+}
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header nav ul li {
+     display: inline-block;
+     padding-top: 50px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    display: inline-block;
+    font-family: GentiumBookBasic;
+    font-weight: bold;
+    padding: 0 20px;
+}
+header nav ul li:hover {
+    border-top: 2px solid #ffffff;
+}
+header nav ul li:last-child:hover {
+    border: none;
+}
+header nav ul li .social {
+    padding-left: 0;
+}
+/***************************** Выпадашка *************************************/
+header .nav-mobile {
+    display: none;
+    margin-top: 30px;
+}
+header .nav-mobile img {
+    height: 80px;
+    width: 80px;
+}
+header .nav-mobile .nav-mobile-wrapper {
+    display: none;
+    width: 110px;
+    background-color: rgb(255, 197, 8);
+    left: 300px;
+    /* Хз как пидвинуть чуть выше к картинке... ? */
+}
+header .nav-mobile .nav-mobile-wrapper ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+header .nav-mobile .nav-mobile-wrapper ul li {
+    display: inline-block;
+    padding: 5px 5px;
+}
+header .nav-mobile .nav-mobile-wrapper ul a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+header .nav-mobile:hover .nav-mobile-wrapper {
+    display: block;
+}
+/******************************* Верхняя секция ******************************/
+.section-home .container {
+    height: 750px;
+    text-align: center;
+    background-image: url(image/Bg.png);
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.section-home h1 {
+    opacity: 0.92;
+    text-shadow: 0.5px 0.9px 2px rgba(1, 1, 1, 0.64);
+    font-family: YesevaOne;
+    font-size: 100px;
+    color: white;
+    /* padding-top: 239px; */
+    margin: 0 10px;
+}
+h1:after {
+    content: url(image/Divider.png);
+    display: block;
+}
+.section-home .home-buttons .button{
+    color: white;
+    font-size: 18px;
+    padding: 20px 50px;
+    font-family: Lato;
+}
+.section-home .home-buttons .button--dark {
+    background-color: #00000093;
+    border: none;
+}
+.section-home .home-buttons .button--light {
+    background-color: #ffffff36;
+    margin-left: 30px;
+    border-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding: 18px 50px;
+}
+/******************************* Вторая секция "С ТАРЕЛКОЙ" ******************************/
+
+.section-about .container {
+    height: 710px;
+    background-image: url(image/Section\ Background.png);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.section-about .about-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 30px 0 10px;
+}
+.section-about .about-content h2 {
+    color: #cc9900;
+    margin-bottom: 15px;
+}
+.section-about .about-content p {
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4c4c4c;
+}
+.section-about .about-content .item {
+    margin-bottom: 16px;
+}
+.section-about .about-content .item2 {
+    margin-top: 30px;
+    margin-left: 60px;
+}
+.section-about .about-img {
+    margin-top: 55px;
+}
+/******************************* Третья секция "ИНГРЕДИЕНТЫ" ******************************/
+.section-ingredients .container {
+    background-image: url(image/Background\ Section\ -\ Ingredients.png);
+    height: 758px;
+}
+.section-ingredients .ingredients-content {
+    width: 570px;
+    height: 557px;
+    position: absolute;
+    right: 215px;
+    top: 100px;
+    background-color: #00000093;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.section-ingredients .ingredients-content h2 {
+    margin-bottom: 16px;
+}
+.section-ingredients .ingredients-content .tracery {
+    margin-bottom: 14px;
+}
+.section-ingredients .img-ingredients {
+    margin-top: 76px;
+}
+.section-ingredients .second-ingredient {
+    margin: 0 40px;
+}
+/******************************* Четвертая секция "МЕНЮ" ******************************/
+.section-menu .container {
+    height: 994px;
+    background-image: url(image/Background\ Section\ Menu.png);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-menu .container .menu-column {
+    width: 455px;
+    margin: 0 70px;
+}
+.section-menu h2 {
+    text-align: center;
+    margin: 41px 0 16px 0;
+}
+.section-menu h2::after {
+    content: url(image/Divider.yellow.png);
+    display: block;
+}
+.section-menu .menu-dishes .dish-area {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.section-menu .menu-dishes .dish {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #c89f2d4f;
+    font-size: 21px;
+    font-weight: bold;
+}
+.section-menu .composition {
+    font-family: Lato;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4c4c4c;
+    margin: 13px 0 29px 0;
+}
+.section-menu h2,
+.section-menu .menu-dishes .dish {
+    color: #cc9900;
+}
+.section-menu .menu-dishes .dish p {
+    margin: 0 0 9px 0;
+}
+.section-menu .menu-dishes .wrapped {
+    width: 430px;
+}
+.section-menu .menu-dishes .special {
+    width: 455px;
+    border: 1px solid #c89f2d4f;
+    padding: 8px 11px 12px 12px;
+    margin-bottom: 25px;
+}
+.section-menu .menu-dishes .special p {
+    margin-bottom: 0;
+}
+.section-menu .menu-dishes .area-salads .spec,
+.section-menu .menu-dishes .area-main .spec {
+    width: 69px;
+    height: 22px;
+    background-color: #c89f2dab;
+    text-align: center;
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #f8fafa;
+    margin-left: 386px;
+}
+.section-menu .menu-dishes .area-salads .p-marg,
+.section-menu .menu-dishes .area-main .p-marg {
+    margin-bottom: 8px;
+}
+/******************************* Пятая секция "СКОВОРОДОЧКА" ******************************/
+.section-reviews .container {
+    height: 758px;
+    background-image: url(image/Background\ Section\ Content.png);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-reviews .quote {
+    width: 770px;
+    height: 557px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000d8;
+    position: relative;
+}
+.section-reviews .quote h2 {
+    margin: 0 0 15px 0;
+}
+.section-reviews .quote .backtick {
+    position: absolute;
+    width: 32px;
+    height: 25px;
+    font-family: Georgia;
+    font-size: 80px;
+    text-align: center;
+    color: #949b9b;
+    left: 41px;
+    top: 160px;
+}
+.section-reviews .quote .comments {
+    font-family: GentiumBookBasic;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.8;
+    text-align: center;
+    color: #dde0df;
+    margin: 15px 0;
+}
+.section-reviews .quote .signature {
+    font-family: Lato;
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+}
+/******************************* Шестая секция "РЕЗЕРВАЦИЯ" ******************************/
+.section-reservations .container {
+    height: 708px;
+    background-image: url(image/Section\ Background.png);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-reservations .reservations-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-reservations .column-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 45px;
+}
+.section-reservations .column-img .reservations-colume-part {
+    margin: 0 15px;
+}
+.section-reservations .column-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 430px;
+    margin-left: 45px;
+}
+.section-reservations .column-data h2 {
+    font-family: YesevaOne;
+    line-height: 0.67;
+    color: #cc9900;
+    text-align: center;
+    margin: 0;
+}
+.section-reservations .column-data h2::after {
+    content: url(image/Divider.yellow.png);
+    display: block;
+    margin: 20px 0;
+}
+.section-reservations .column-data p {
+    font-family: Lato;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+    color: #4c4c4c;
+    margin: 8px 0;
+}
+.section-reservations .column-data form {
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.section-reservations .column-data form label {
+    font-family: OpenSans;
+    font-size: 14px;
+    font-weight: bold;
+    color: #c9a131;
+    /* margin-bottom: 10px;  ???*/
+}
+.section-reservations .column-data form input {
+    width: 200px;
+    height: 36px;
+    padding-left: 14px;
+    font-family: OpenSans;
+    font-size: 16px;
+    font-style: italic;
+    color: #7c7c7c;
+}
+.section-reservations .column-data form input:focus {
+    outline-color:#f1a80b;
+}
+.section-reservations .column-data form .field {
+    margin-top: 30px;
+}
+.section-reservations .column-data form button {
+    width: 200px;
+    height: 36px;
+    background-color: #c89f2d;
+    border: none;
+    font-family: OpenSans;
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 33px;
+}
+/******************************* ФУТЕР  ******************************/
+footer {
+    max-width: 1601px;
+    height: 320px;
+    background-color: #191919;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    text-align: center;
+}
+footer .footer-column {
+    margin-top: 61px;
+}
+footer .footer-column h3 {
+    font-family: YesevaOne;
+    font-size: 21px;
+    line-height: 1.14;
+    color: #fefefe;
+    margin: 0;
+}
+footer .footer-column h3::after {
+    content: url(image/tracery.png);
+    display: block;
+    margin-top: 21px;
+}
+footer .footer-column p {
+    font-family: OpenSans;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+footer .footer-column span,
+footer .footer-column .bold {
+    font-weight: bold;
+}
+footer .footer-column .img-margin {
+    margin-top: 35px;
+}
+/****************************************************************************/
+/******************************* АДАПТИВНОСТЬ  ******************************/
+@media (max-width: 1385px) {
+    header .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .logo {
+        position: inherit;
+        left: 0;
+        margin: 0 20px;
+    }
+    header nav {
+        position: inherit;
+        right: 0;
+    }
+}
+@media (max-width: 1030px) {
+    .section-home h1 {
+        font-size: 70px;
+    }
+    header nav ul li {
+        padding-top: 50px;
+   }
+   header nav ul li a {
+       font-size: 19px;
+       padding: 0 8px;
+   }
+   .logo {
+    /* width: 156px;
+    height: 92px; */
+    width: 100px;
+    height: 60px;
+    top: 30px
+}
+   /* .section-home .container {
+    height: 500px;
+} */
+.section-ingredients .container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.section-ingredients .ingredients-content {
+    position: relative;
+    right: 0;
+    top: 0;
+}
+@media (max-width: 830px) {
+    header nav {
+        display: none;
+    }
+    header .container {
+        justify-content: space-around;
+    }
+    header .nav-mobile {
+        display: block;
+        width: 45px;
+        height: 45px;
+    }
+}
