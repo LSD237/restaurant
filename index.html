@@ -2,17 +2,17 @@
 <html>
     <head>
         <title>Restaurant menu</title>
+        <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic|Lato|Yeseva+One|Open+Sans" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
         <header>
-            <!-- <div class="container"> -->
+            <div class="container">
                 <div class="logo">
                     <img class="img-responsive" src="image/logo@2x.png" alt="logotype">
                 </div>
-                <div class="nav-mobile">
-                    <!-- <img src="image/image menu.png" alt="menu"> -->
+                <nav class="nav-mobile">
                     <img src="image/menu-icon.png" alt="menu">
                     <div class="nav-mobile-wrapper">
                         <ul>
@@ -24,7 +24,7 @@
                             <li><a href="#res">Reservations</a></li>
                         </ul>
                     </div>
-                </div>
+                </nav>
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -36,7 +36,7 @@
                         <li><a class="social" href=""><img src="image/Social Icons.png" alt="social media"></a></li>
                     </ul>
                 </nav>
-            <!-- </div> -->
+            </div>
         </header>
         <section id="home" class="section-home cover-background">
             <div class="container">
@@ -51,13 +51,13 @@
             <div class="container">
                 <div class="about-content about-colume">
                     <h2 class="tracery">Just the right food</h2>
-                    <img class="item img-responsive" src="image/Divider.yellow.png" alt="tracery">
-                    <p>If you've been to one of our restaurants, you've seen - and<br>
-                        tasted - what keeps our customers coming back for more.<br>
-                        Perfect materials and freshly baked food, delicious Lambda<br>
-                        cakes, muffins, and gourmet coffes make us hard to resist!<br>
+                    <!-- <img class="img-tracery img-responsive" src="image/Divider.yellow.png" alt="tracery"> -->
+                    <p>If you've been to one of our restaurants, you've seen - and
+                        tasted - what keeps our customers coming back for more.
+                        Perfect materials and freshly baked food, delicious Lambda
+                        cakes, muffins, and gourmet coffes make us hard to resist!
                         Stop in today and check us out!</p>
-                    <img class="item2 img-responsive" src="image/Image - Cook.png" alt="photo with a signature">
+                    <img class="img-photo-cook img-responsive" src="image/Image - Cook.png" alt="photo with a signature">
                 </div>
                 <div class="about-img about-colume">
                     <img class="img-responsive" src="image/Image - Dish.png" alt="dish">
@@ -69,10 +69,10 @@
                 <div class="ingredients-content">
                     <h2>Fine ingredients</h2>
                     <img class="tracery img-responsive" src="image/Divider Section - Ingredients.png" alt="tracery">
-                    <p>If you've been to one of our restaurants, you've seen - and<br>
-                        tasted - what keeps our customers coming back for more.<br>
-                        Perfect materials and freshly baked food, delicious Lambda<br>
-                        cakes, muffins, and gourmet coffees make us hard to resist!<br>
+                    <p>If you've been to one of our restaurants, you've seen - and
+                        tasted - what keeps our customers coming back for more.
+                        Perfect materials and freshly baked food, delicious Lambda
+                        cakes, muffins, and gourmet coffees make us hard to resist!
                         Stop in today and check us out!</p>
                     <div class="img-ingredients">
                             <img class="img-responsive" src="image/image 3.png" alt="rye">
@@ -117,7 +117,9 @@
                                 </div>
                                 <p class="composition p-marg">Refreshing traditional cucumber and garlic yoghurt dip.</p>
                             </div>
-                            <div class="spec"><span>Special</span></div>
+                            <div class="dop-spec">
+                                <div class="spec"><span>Special</span></div>
+                            </div>
                             <div class="wrapped special">
                                 <div class="dish">
                                     <p>Greek Salad</p><p>$5.50</p>
@@ -160,7 +162,9 @@
                                 </div>
                                 <p class="composition p-marg">Refreshing traditional cucumber and garlic yoghurt dip.</p>
                             </div>
-                            <div class="spec"><span>Special</span></div>
+                            <div class="dop-spec">
+                                <div class="spec"><span>Special</span></div>
+                            </div>
                             <div class="wrapped special">
                                 <div class="dish">
                                     <p>Roast Lamb</p><p>$5.50</p>
@@ -242,25 +246,27 @@
             </div>
         </section>
         <footer>
-            <div class="footer-column">
-                <h3 class="h-size tracery">About Us</h3>
-                <p>Lambda's and expanded Chelsea location<br>
-                    represents a truly authentic <span>Greek</span> patisserie,<br>
-                    featuring breakfasts of ftesh croissants and<br>
-                    steaming bowls of cafe.<br>
-                    Lamda the best restautant in town</p>
-            </div>
-            <div class="footer-column">
-                <h3 class="h-size tracery">Opening Hours</h3>
-                <p><span>Mon-Thu:</span> 7:00am-8:00pm<br>
-                <span>Fri-Sun:</span> 7:00am-10:00pm</p>
-                <img class="img-margin" src="image/cards.png" alt="payment cards">
-            </div>
-            <div class="footer-column">
-                <h3 class="h-size tracery">Our Location</h3>
-                <p class="bold">19th Paradise Street Sitia<br>
-                    128 Meserole Avenue</p>
-                <img class="img-margin" src="image/icons.png" alt="social media">
+            <div class="container">
+                <div class="footer-column">
+                    <h3 class="h-size tracery">About Us</h3>
+                    <p>Lambda's and expanded Chelsea location<br>
+                        represents a truly authentic <span>Greek</span> patisserie,<br>
+                        featuring breakfasts of ftesh croissants and<br>
+                        steaming bowls of cafe.<br>
+                        Lamda the best restautant in town</p>
+                </div>
+                <div class="footer-column">
+                    <h3 class="h-size tracery">Opening Hours</h3>
+                    <p><span>Mon-Thu:</span> 7:00am-8:00pm<br>
+                    <span>Fri-Sun:</span> 7:00am-10:00pm</p>
+                    <img class="img-margin" src="image/cards.png" alt="payment cards">
+                </div>
+                <div class="footer-column">
+                    <h3 class="h-size tracery">Our Location</h3>
+                    <p class="bold">19th Paradise Street Sitia<br>
+                        128 Meserole Avenue</p>
+                    <img class="img-margin" src="image/icons.png" alt="social media">
+                </div>
             </div>
         </footer>
     </body>
