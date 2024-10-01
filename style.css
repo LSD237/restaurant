@@ -1,1 +1,964 @@
-﻿
+﻿/********************* Общие классы ************************/
+* {
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+    background-position: center center;
+    background-size: cover;
+}
+h2 {
+    font-size: 36px;
+    font-family: 'YesevaOne';
+}
+.img-responsive {
+    display: inline-block;
+    max-width: 100%;
+}
+.section-about .about-content h2,
+.section-menu h2,
+.section-menu .menu-dishes .dish,
+.section-reservations .column-data h2 {
+    color: #cc9900;
+}
+.section-menu h2::after,
+.section-about .about-content h2:after,
+.section-reservations .column-data h2::after
+ {
+    content: url(image/Divider.yellow.png);
+    display: block;
+}
+/******************************** Шапка  *********************************/
+header {
+    z-index: 1;
+    position: absolute;
+    height: 159px;
+    width: 100%;
+    margin: 0 auto;
+    background: -moz-linear-gradient(top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%);
+}
+.logo {
+    position: absolute;
+    left: 179px;
+    top: 8px;
+    width: 156px;
+    height: 92px;
+}
+header nav {
+    position: absolute;
+    right: 215px;
+}
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+header nav ul li {
+     display: inline-block;
+     padding-top: 50px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 21px;
+    display: inline-block;
+    font-family: 'Gentium Book Basic', serif;
+    /* font-weight: bold; */
+    padding: 0 20px;
+}
+header nav ul li:hover {
+    border-top: 2px solid #ffffff;
+}
+header nav ul li:last-child:hover {
+    border: none;
+}
+header nav ul li .social {
+    padding-left: 0;
+}
+/***************************** Выпадашка *************************************/
+header .nav-mobile {
+    display: none;
+    margin-top: 30px;
+    position: relative;
+}
+header .nav-mobile img {
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    opacity: 0.85;
+}
+header .nav-mobile .nav-mobile-wrapper {
+    display: none;
+    position: absolute;
+    top: 55px;
+    right: -15px;
+    background-color: rgb(214, 168, 15);
+    -webkit-box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 1px 2px 2px rgba(0,0,0,0.75);
+}
+header .nav-mobile .nav-mobile-wrapper ul {
+    margin: 0 ;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+header .nav-mobile .nav-mobile-wrapper ul li {
+    display: inline-block;
+    padding: 5px 5px;
+}
+header .nav-mobile .nav-mobile-wrapper ul a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+header .nav-mobile:hover .nav-mobile-wrapper {
+    display: block;
+}
+/******************************* Верхняя секция ******************************/
+.section-home {
+    background-image: url(image/Bg.png);
+    background-position: center center;
+    background-size: cover;
+}
+.section-home .container {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+.section-home h1 {
+    opacity: 0.92;
+    text-shadow: 0.5px 0.9px 2px rgba(1, 1, 1, 0.64);
+    font-family: 'YesevaOne';
+    font-size: 100px;
+    color: white;
+    margin: 0 10px;
+}
+.section-home .tracery:after {
+    content: url(image/Divider.png);
+    display: block;
+    /* Почему узор не такой яркий стал? Как поправить? */
+    content: "";
+    background-image: url(image/Divider.png);
+    width: 230px;
+    height: 40px;
+    position: relative;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 35px auto;
+}
+.section-home .home-buttons .button {
+    color: white;
+    font-size: 18px;
+    padding: 20px 50px;
+    font-family: 'Lato';
+    cursor: pointer;
+}
+.section-home .home-buttons .button--dark {
+    background-color: #00000093;
+    border: 1px solid #00000093;
+}
+.section-home .home-buttons .button--light {
+    background-color: #ffffff36;
+    margin-left: 30px;
+    border: 1px solid white;
+}
+/******************************* Вторая секция "С ТАРЕЛКОЙ" ******************************/
+.section-about {
+    background-image: url(image/Section\ Background.png);
+    background-position: center center;
+    background-size: cover;
+}
+.section-about .container {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.section-about .about-content {
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center; */
+    margin: 0 30px 0 10px;
+}
+.section-about .about-content h2 {
+    margin-bottom: 15px;
+}
+.section-about .about-content p {
+    width: 408px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4c4c4c;
+}
+.section-about .about-content .img-tracery {
+    margin-bottom: 16px;
+}
+.section-about .about-content .img-photo-cook {
+    margin-top: 30px;
+    padding-left: 60px;
+}
+.section-about .about-img {
+    margin-top: 55px;
+}
+/******************************* Третья секция "ИНГРЕДИЕНТЫ" ******************************/
+.section-ingredients {
+    background-image: url(image/Background\ Section\ -\ Ingredients.png);
+    background-position: center center;
+    background-size: cover;
+}
+.section-ingredients .container {
+    height: 100vh;
+}
+.section-ingredients .ingredients-content {
+    width: 570px;
+    height: 557px;
+    position: absolute;
+    right: 215px;
+    top: 100px;
+    background-color: #00000093;
+    color: white;
+    text-align: center;
+}
+.section-ingredients .ingredients-content h2 {
+    margin-bottom: 16px;
+    margin-top: 83px;
+}
+.section-ingredients .ingredients-content .tracery {
+    margin-bottom: 14px;
+}
+.section-ingredients .ingredients-content p {
+    width: 409px;
+    margin: 16px auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+.section-ingredients .img-ingredients {
+    margin-top: 60px;
+}
+.section-ingredients .second-ingredient {
+    margin: 0 40px;
+}
+/******************************* Четвертая секция "МЕНЮ" ******************************/
+.section-menu {
+    background-image: url(image/Background\ Section\ Menu.png);
+    background-position: center center;
+    background-size: cover;
+}
+.section-menu .container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-menu .container .menu-column {
+    width: 50%;
+}
+.section-menu h2 {
+    text-align: center;
+    margin: 41px 0 16px 0;
+}
+.section-menu .menu-dishes .dish-area {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.section-menu .menu-dishes .dish {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    border-bottom: 1px solid #c89f2d4f;
+    font-size: 21px;
+    font-weight: bold;
+}
+.section-menu .composition {
+    font-family: 'Lato';
+    font-size: 16px;
+    line-height: 1.5;
+    color: #4c4c4c;
+    margin: 13px 0 29px 0;
+}
+.section-menu .menu-dishes .dish p {
+    margin: 0 0 9px 0;
+}
+.section-menu .menu-dishes .wrapped {
+    width: 430px;
+}
+.section-menu .menu-dishes .special {
+    width: 455px;
+    border: 1px solid #c89f2d4f;
+    padding: 8px 11px 12px 12px;
+    margin-bottom: 25px;
+}
+.section-menu .menu-dishes .special p {
+    margin-bottom: 0;
+}
+.section-menu .menu-dishes .area-salads .spec,
+.section-menu .menu-dishes .area-main .spec {
+    width: 69px;
+    height: 22px;
+    background-color: #c89f2dab;
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 14px;
+    line-height: 1.71;
+    color: #f8fafa;
+    margin-left: 386px;
+}
+.section-menu .menu-dishes .area-salads .p-marg,
+.section-menu .menu-dishes .area-main .p-marg {
+    margin-bottom: 8px;
+}
+/******************************* Пятая секция "СКОВОРОДОЧКА" ******************************/
+.section-reviews {
+    background-image: url(image/Background\ Section\ Content.png);
+    background-position: center center;
+    background-size: cover;
+}
+.section-reviews .container {
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.section-reviews .quote {
+    width: 770px;
+    height: 557px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000d8;
+    position: relative;
+}
+.section-reviews .quote h2 {
+    margin: 0 0 15px 0;
+}
+.section-reviews .quote .backtick {
+    position: absolute;
+    font-family: Georgia;
+    font-size: 80px;
+    text-align: center;
+    color: #949b9b;
+    left: 41px;
+    top: 160px;
+}
+.section-reviews .quote .comments {
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 25px;
+    /* font-weight: bold; */
+    line-height: 1.8;
+    text-align: center;
+    color: #dde0df;
+    margin: 15px 0;
+}
+.section-reviews .quote .signature {
+    font-family: 'Lato';
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0;
+}
+/******************************* Шестая секция "РЕЗЕРВАЦИЯ" ******************************/
+.section-reservations {
+    background-image: url(image/Section\ Background.png);
+    background-position: center center;
+    background-size: cover;
+}
+.section-reservations .container {
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-reservations .reservations-column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.section-reservations .column-img {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 45px;
+}
+.section-reservations .column-img .reservations-colume-part {
+    margin: 0 15px;
+}
+.section-reservations .column-data {
+    display: block;
+    width: 430px;
+    /* width: 43%; */
+    margin: 0 10px 0 45px;
+}
+.section-reservations .column-data h2 {
+    line-height: 0.67;
+    text-align: center;
+    margin: 0;
+}
+.section-reservations .column-data h2::after {
+    margin: 20px 0;
+}
+.section-reservations .column-data p {
+    font-family: 'Lato';
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+    color: #4c4c4c;
+    margin: 8px 0;
+}
+.section-reservations .column-data form {
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: wrap; cокращение*/
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+.section-reservations .column-data form label {
+    font-family: 'OpenSans', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #c9a131;
+}
+.section-reservations .column-data form input {
+    width: 200px;
+    height: 36px;
+    padding-left: 14px;
+    font-family: 'OpenSans';
+    font-size: 16px;
+    font-style: italic;
+    color: #7c7c7c;
+    margin-top: 5px;
+}
+.section-reservations .column-data form input:focus {
+    outline-color:#f1a80b;
+}
+.section-reservations .column-data form .field {
+    margin-top: 30px;
+}
+.section-reservations .column-data form button {
+    width: 200px;
+    height: 36px;
+    background-color: #c89f2d;
+    border: none;
+    font-family: 'OpenSans';
+    font-size: 16px;
+    color: #ffffff;
+    /* margin-top: 33px; */
+    margin: 33px auto 0;
+    cursor: pointer;
+}
+/******************************* ФУТЕР  ******************************/
+footer {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    background-color: #191919;
+}
+footer .container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: baseline;
+    text-align: center;
+}
+footer .footer-column {
+    position: relative;
+    margin-top: 61px;
+}
+footer .footer-column h3 {
+    font-family: 'YesevaOne';
+    font-size: 21px;
+    line-height: 1.14;
+    color: #fefefe;
+    margin: 0;
+}
+footer .footer-column h3::after {
+    content: url(image/tracery.png);
+    display: block;
+    margin-top: 21px;
+}
+footer .footer-column p {
+    font-family: 'OpenSans';
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+footer .footer-column span,
+footer .footer-column .bold {
+    font-weight: bold;
+}
+footer .footer-column .img-margin {
+    margin-top: 35px;
+}
+/****************************************************************************/
+/******************************* АДАПТИВНОСТЬ  ******************************/
+@media (max-width: 1385px) {
+    header .container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+    }
+    .logo {
+        position: inherit;
+        left: 0;
+        margin: 0 20px;
+    }
+    header nav {
+        position: inherit;
+        right: 0;
+    }
+}
+@media (max-width: 1100px) {
+    .section-reservations .column-img {
+        margin-right: 5px;
+    }
+    .section-reservations .column-data {
+        margin: 20px 10px;
+    }
+}
+@media (max-width: 1060px) {
+    .section-about .container {
+        height: auto;
+        flex-flow: column nowrap;
+        background-attachment: fixed;
+    }
+    .section-about .about-content {
+        margin: 30px 10px 10px 10px;
+    }
+    .section-about .about-img {
+        margin-top: 0px;
+    }
+}
+@media (max-width: 1030px) {
+    header {
+        height: 100px;
+    }
+    header nav ul li {
+        padding-top: 30px;
+    }
+    header nav ul li a {
+        font-size: 19px;
+        padding: 0 8px;
+    }
+    .logo {
+        width: 100px;
+        height: 60px;
+        top: 10px
+    }
+    /* ************ */
+    .section-home .container {
+        height: 500px;
+    }
+    .section-home h1 {
+        font-size: 55px;
+    }
+    .section-home .tracery:after {
+        width: 150px;
+        height: 30px;
+        margin: 10px auto;
+    }
+    .section-home .home-buttons .button {
+        font-size: 12px;
+        padding: 14px 38px;
+    }
+    .section-home .home-buttons .button--light {
+        margin-left: 10px;
+    }
+    /* *************** */
+    .section-reservations .container {
+        height: 1080px;
+        flex-flow: column nowrap;
+        background-attachment: fixed;
+    }
+    .section-reservations .column-data form .field {
+        margin-top: 10px;
+    }
+    .section-reservations .column-img {
+        margin: 40px 10px 30px;
+    }
+    /* *************** */
+    .section-ingredients .container {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .section-ingredients .ingredients-content {
+        position: relative;
+        right: 0;
+        top: 0;
+    }
+}
+@media (max-width: 960px) {
+    .section-menu .container {
+        flex-flow: column nowrap;
+        background-attachment: fixed;
+    }
+    .section-menu .container .menu-column {
+        width: auto;
+    }
+}
+@media (max-width: 840px) {
+    header nav ul li:hover {
+        border-top: none;
+    }
+    header nav {
+        display: none;
+    }
+    header .container {
+        justify-content: space-around;
+    }
+    header .nav-mobile {
+        display: block;
+        width: 45px;
+        height: 45px;
+    }
+    /* ************** */
+    .section-ingredients .container {
+        height: 550px;
+    }
+    .section-ingredients .ingredients-content {
+        width: 470px;
+        height: 457px;
+    }
+    .section-ingredients .ingredients-content h2 {
+        margin-bottom: 8px;
+        margin-top: 40px;
+    }
+    .section-ingredients .img-ingredients {
+        margin-top: 30px;
+    }
+    .section-ingredients .second-ingredient {
+        margin: 0 20px;
+    }
+    /* ***************** */
+    .section-reviews .container {
+        height: 450px;
+    }
+    .section-reviews .quote {
+        width: 550px;
+        height: 400px;
+    }
+    .section-reviews .quote h2 {
+        font-size: 26px;
+    }
+    .section-reviews .quote .backtick {
+        font-size: 55px;
+        left: 30px;
+        top: 120px;
+    }
+    .section-reviews .quote .comments {
+        font-size: 18px;
+    }
+    .section-reviews .quote .signature {
+        font-size: 14px;
+    }
+    .section-reviews .quote img {
+        height: 18px;
+        width: 180px;
+    }
+    /* **************** */
+    footer {
+        height: 185px;
+    }
+    footer .footer-column {
+        width: 126px;
+        margin-top: 20px;
+    }
+    footer .footer-column h3 {
+        font-size: 14px; 
+    }
+    footer .footer-column h3::after {
+        /* Задание размера :after */
+        content: "";
+        background-image: url(image/tracery.png);
+        width: 100px;
+        height: 10px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 10px auto 0;
+    }
+    footer .footer-column p {
+        font-size: 10px;
+        margin: 10px auto 0;
+    }
+    footer .footer-column .img-margin {
+        margin-top: 25px;
+    }
+    footer .footer-column:first-child br {
+        /* Удаление <br> (перенос строки) */
+        content: "";
+    }
+    footer .footer-column:nth-child(2n) .img-margin {
+        width: 80px;
+    }
+    footer .footer-column:last-child .img-margin {
+        width: 60px;
+    }
+}
+@media (max-width: 670px) {
+    header {
+        height: 75px;
+    }
+    header .nav-mobile {
+        margin-top: 15px;
+    }
+    header .nav-mobile img {
+        height: 35px;
+        width: 35px;
+    }
+    header .nav-mobile .nav-mobile-wrapper {
+        top: 40px;
+        right: 0px;
+    }
+    .logo {
+        width: 70px;
+        height: 40px;
+    }
+    /* ************ */
+    .section-home .tracery:after {
+        width: 100px;
+        height: 20px;
+        margin: 10px auto;
+    }
+    .section-home .container {
+        height: 350px;
+    }
+    .section-home h1 {
+        font-size: 40px;
+    }
+    .section-home .home-buttons .button {
+        font-size: 10px;
+        padding: 10px 28px;
+    }
+    .section-home .home-buttons .button--light {
+        margin-left: 10px;
+    }
+    /* ************** */
+    .section-reviews .container {
+        min-height: 350px;
+        height: auto;
+    }
+    .section-reviews .quote {
+        width: auto;
+        height: auto;
+        padding: 0 25px;
+    }
+    .section-reviews .quote h2 {
+        font-size: 18px;
+        margin-top: 30px;
+    }
+    .section-reviews .quote .backtick {
+        font-size: 35px;
+        top: 78px;
+        left: 8px;
+    }
+    .section-reviews .quote .comments {
+        font-size: 12px;
+        max-width: 360px;
+    }
+    .section-reviews .quote .comments br {
+        display: none;
+    }
+    .section-reviews .quote .signature {
+        font-size: 10px;
+        margin-top: -15px;
+        margin-bottom: 35px;
+    }
+    .section-reviews .quote img {
+        height: 14px;
+        width: 140px;
+    }
+    /* *********** */
+    .section-ingredients .container {
+        min-height: 400px;
+        height: auto;
+    }
+    .section-ingredients .ingredients-content {
+        width: auto;
+        height: auto;
+    }
+    .section-ingredients .ingredients-content h2 {
+        font-size: 21px;
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+    .section-ingredients .img-ingredients {
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding: 0 5px;
+    }
+    .section-ingredients .second-ingredient {
+        margin: 0 10px;
+    }
+    .section-ingredients .ingredients-content p {
+        width: auto;
+        max-width: 308px;
+        padding: 0 10px;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+    .section-ingredients .ingredients-content .tracery {
+        height: 14px;
+        width: 140px;
+    }
+    .section-ingredients .img-ingredients img {
+        height: 75px;
+        width: 75px;
+    }
+    /* *************** */
+    .section-menu h2 {
+        font-size: 30px;
+    }
+    .section-menu h2::after {
+        content: "";
+        background-image: url(image/Divider.yellow.png);
+        width: 200px;
+        height: 18px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 5px auto 0;
+    }
+    .section-menu .menu-dishes .dish {
+        font-size: 18px;
+    }
+    .section-menu .composition {
+        font-size: 14px;
+        margin: 13px 0 15px 0;
+    }
+    .section-menu .menu-dishes .wrapped {
+        width: 345px;
+    }
+    .section-menu .menu-dishes .special {
+        width: 370px;
+        padding: 6px 9px 10px 10px;
+    }
+    .section-menu .menu-dishes .dop-spec {
+        height: 22px;
+    }
+    .section-menu .menu-dishes .area-salads .spec,
+    .section-menu .menu-dishes .area-main .spec {
+        font-size: 12px;
+        position: absolute;
+        right: 0px;
+    }
+    /* *********************** */
+    .section-reservations .column-data {
+        width: 360px;
+        margin: 0 10px;
+    }
+    .section-reservations .column-data h2 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .section-reservations .column-data h2::after {
+        content: "";
+        background-image: url(image/Divider.yellow.png);
+        width: 200px;
+        height: 18px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 15px auto;
+    }
+    .section-reservations .column-data p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+    .section-reservations .column-data p br {
+        display: none;
+    }
+    .section-reservations .column-data form input {
+        width: 170px;
+    }
+}
+@media (max-width: 450px) {
+    .section-about .about-content {
+        margin: 0 10px;
+    }
+    .section-about .about-content h2 {
+        font-size: 30px;
+    }
+    .section-about .about-content h2:after {
+        content: "";
+        background-image: url(image/Divider.yellow.png);
+        width: 200px;
+        height: 18px;
+        position: relative;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: 5px auto 0;
+    }
+    .section-about .about-content p {
+        width: auto;
+        font-size: 14px;
+    }
+    .section-about .about-content .img-tracery {
+        margin-bottom: 0;
+        height: 20px;
+        width: 200px;
+    }
+    /* ************** */
+    .section-reservations .container {
+        height: auto;
+        padding: 20px 0;
+    }
+    .section-reservations .column-img {
+        margin: 0 10px;
+    }
+    .section-reservations .column-data {
+        width: auto;
+        margin: 0;
+    }
+    .section-reservations .column-data form {
+        padding: 0 10px;
+    }
+    .section-reservations .column-data form {
+        justify-content: space-around;
+    }
+    /* ***************** */
+    .section-menu .menu-dishes .wrapped {
+        width: auto;
+    }
+    .section-menu .menu-dishes .special {
+        width: auto;
+    }
+    .section-menu .menu-dishes .dish-area {
+        padding: 0 10px;
+    }
+    .section-menu .menu-dishes .area-salads .spec, 
+    .section-menu .menu-dishes .area-main .spec {
+        right: 10px;
+    }
+}
